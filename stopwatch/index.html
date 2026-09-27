@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SNITCH - The New Edit</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600&amp;family=Playfair+Display:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-highest": "#e4e2df",
+                        "inverse-on-surface": "#f2f0ed",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#494642",
+                        "secondary": "#745a27",
+                        "on-secondary-fixed": "#261900",
+                        "secondary-container": "#fedb9b",
+                        "outline-variant": "#c6c7c1",
+                        "tertiary": "#000000",
+                        "tertiary-container": "#1d1b17",
+                        "on-primary-container": "#848481",
+                        "primary": "#000000",
+                        "surface": "#fbf9f6",
+                        "tertiary-fixed-dim": "#cbc6bf",
+                        "secondary-fixed-dim": "#e4c285",
+                        "surface-bright": "#fbf9f6",
+                        "primary-container": "#1b1c1a",
+                        "surface-container-high": "#eae8e5",
+                        "on-secondary-container": "#795f2b",
+                        "on-surface-variant": "#454743",
+                        "inverse-primary": "#c7c6c3",
+                        "outline": "#767872",
+                        "on-primary-fixed-variant": "#464744",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed": "#1b1c1a",
+                        "on-secondary-fixed-variant": "#5a4312",
+                        "surface-dim": "#dbdad7",
+                        "surface-container": "#efeeeb",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#e8e1db",
+                        "on-tertiary-container": "#87837e",
+                        "on-surface": "#1b1c1a",
+                        "error": "#ba1a1a",
+                        "on-background": "#1b1c1a",
+                        "surface-variant": "#e4e2df",
+                        "on-primary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "surface-container-low": "#f5f3f0",
+                        "secondary-fixed": "#ffdea4",
+                        "on-tertiary-fixed": "#1d1b17",
+                        "primary-fixed": "#e4e2df",
+                        "inverse-surface": "#30312f",
+                        "on-error-container": "#93000a",
+                        "error-container": "#ffdad6",
+                        "background": "#fbf9f6",
+                        "surface-tint": "#5e5e5c",
+                        "primary-fixed-dim": "#c7c6c3"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "4px",
+                        "margin-desktop": "64px",
+                        "section-gap": "120px",
+                        "margin-mobile": "16px",
+                        "container-max": "1440px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Manrope"],
+                        "body-lg": ["Manrope"],
+                        "headline-md": ["Playfair Display"],
+                        "headline-lg": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "display-lg-mobile": ["Playfair Display"],
+                        "body-md": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "1.4", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.3", "fontWeight": "400" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+                        "display-lg-mobile": ["40px", { "lineHeight": "1.2", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopNavBar JSON Component -->
+<nav class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md dark:bg-surface-container-highest/90 border-b border-on-surface/10 dark:border-on-surface-variant/10">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="flex gap-6 hidden md:flex items-center">
+<a class="text-on-surface-variant dark:text-on-tertiary-container font-medium font-label-sm text-label-sm hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-300" href="#">MEN</a>
+<a class="text-on-surface-variant dark:text-on-tertiary-container font-medium font-label-sm text-label-sm hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-300" href="#">WOMEN</a>
+<a class="text-on-surface-variant dark:text-on-tertiary-container font-medium font-label-sm text-label-sm hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-300" href="#">NEW IN</a>
+</div>
+<a class="font-display-lg text-display-lg-mobile tracking-tighter text-primary dark:text-on-primary-fixed md:text-[32px]" href="/">SNITCH.</a>
+<div class="flex gap-4 items-center">
+<button class="scale-95 active:opacity-80 transition-all hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-300">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button class="scale-95 active:opacity-80 transition-all hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-300">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</button>
+<button class="scale-95 active:opacity-80 transition-all hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-300">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="pt-[80px]">
+<!-- 1. HERO BANNER -->
+<section class="relative w-full h-[85vh] min-h-[600px] flex items-center justify-center overflow-hidden">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="A striking high-fashion editorial campaign image featuring two models in sharp, minimalist modern tailoring. The scene is shot in a bright, cavernous architectural space with soft, natural lighting creating subtle shadows. The aesthetic is extremely premium, high-contrast, and clean, aligning with an upscale editorial layout. Off-white and charcoal tones dominate." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaQY7_9Gec0wcD8YfwgicBq_YSUxLxjb2mNzpBPnK6KJBTeHdoxgdqRFo0n5DURdW0J2IYmFGSRQyCegaGlOlNWaUc4JljULAQcSQE-wveWi9dQ6OcO78GEKFvQdtk9zp4L8P4oaEfqD6J1JYObGXArX-OH0tDH5j7W83SY4mTu0zrJ-HnA7X3JTkJyXIEu897hAdSCPF97oRe68yYlpwiEgTc1uBbDVy8Lgdxl903l8feIPpf_7zbOw"/>
+<div class="absolute inset-0 bg-surface/10"></div>
+<div class="relative z-10 text-center flex flex-col items-center max-w-2xl px-margin-mobile">
+<p class="font-label-sm text-label-sm uppercase tracking-[0.2em] mb-6 text-on-surface">The New Edit / New Season '26</p>
+<h1 class="font-display-lg text-display-lg text-on-surface mb-8">Redefining<br/>Elegance</h1>
+<div class="flex flex-col sm:flex-row gap-4 mt-8">
+<a class="bg-primary-container text-on-primary uppercase font-label-sm text-label-sm px-8 py-4 hover:bg-on-surface-variant transition-colors" href="#">Shop Now</a>
+<a class="border border-primary-container text-on-surface uppercase font-label-sm text-label-sm px-8 py-4 hover:bg-surface-container-high transition-colors" href="#">Explore New In</a>
+</div>
+</div>
+</section>
+<!-- 2. SHOP BY CATEGORY -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<a class="group flex flex-col items-start block" href="#">
+<div class="w-full aspect-[3/4] overflow-hidden mb-6 relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="A high-fashion studio shot of a male model wearing minimalist, structured charcoal tailoring against a pristine off-white background. The lighting is crisp and editorial, highlighting the texture of the fabric. The mood is confident, calm, and exclusive." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDn9YXfUjhIg2mACHepHINHkEk9LCpG4pSfMbO94oKp2RAzhKv6-l-5C7EGj_jYPCQ019IUc4U7fv9bXYgx7ezMzNBrAj8XgxR6YEnp7njmoT6jCX0f6JImZPHthGu8VuLfdbCPGPaHnMiPfPw1mltoS0izP1FotA77HgZogORnj9ksSx3r47Ul-4hY1Z83A4OOGYUD5oOKPwhbd4kNx5ogYLHBnNVS6if-9NUGxuANDzR9Wp2vkgmP-w"/>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2">Men</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Precision tailoring and elevated essentials.</p>
+<span class="font-label-sm text-label-sm uppercase border-b border-on-surface pb-1 group-hover:text-secondary group-hover:border-secondary transition-colors">Shop Men →</span>
+</a>
+<a class="group flex flex-col items-start block" href="#">
+<div class="w-full aspect-[3/4] overflow-hidden mb-6 relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="A high-fashion studio shot of a female model in an elegant, flowing asymmetrical dress. The setting is a minimalist studio with warm off-white tones. The composition is highly editorial, emphasizing movement and premium materials." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLfGp1dIWNWMe8i0rKdpZaGgzyfOO91P3JW9kTiwNquYJNAEslQ-CP8zxqGQAT5utdilTJf_NfRPIVdw4o9G8Mn4DqwR10Q-1Q-_tSXFsLKGoidsf5Gq9s1eilBdpHs5R6rFvTNnOxo3qbVy3ppCj1OrV3exjXLyRMZw1KMWmaqqdmBwioP8K601RFUuOnho832krbm-9RPCxWe6z8eb0ihj6GSk2Gpcr8ei9Z2GazSPQg7b26qmtYqw"/>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2">Women</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Fluid silhouettes and timeless curation.</p>
+<span class="font-label-sm text-label-sm uppercase border-b border-on-surface pb-1 group-hover:text-secondary group-hover:border-secondary transition-colors">Shop Women →</span>
+</a>
+<a class="group flex flex-col items-start block" href="#">
+<div class="w-full aspect-[3/4] overflow-hidden mb-6 relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="An editorial style photograph of fashionable children's clothing, arranged minimally on a textured plinth in a bright, modern space. The lighting is soft and natural. The aesthetic remains high-end and cohesive with luxury adult fashion photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjSI_v58j127-2QEyiOT1zaK8NA55_DeaO0Z-fzSbF6HVMkyO_sJ-Hp4JY_Gnxu-NtUYnL1n_eGa__PrHe3Oap_UIu00tdW-Ekq3Jcwkn6lvWftRluH2ZzDlSpq7NYC6sNwIUGW8BVhbws8Zpf26ZtQ1XVBYTEVKDYtOa0dnn-9M4QPdzYgS6dC-RPKk97kriR1GWiULyRwWhx_M8f3snXnr1yUHeH6WmHHvWFFxvxcYVrs9_C_zAW_w"/>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2">Kids</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Miniature classics for the next generation.</p>
+<span class="font-label-sm text-label-sm uppercase border-b border-on-surface pb-1 group-hover:text-secondary group-hover:border-secondary transition-colors">Shop Kids →</span>
+</a>
+</div>
+</section>
+<!-- 3. FEATURED CAMPAIGN -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-section-gap">
+<div class="relative w-full h-[60vh] min-h-[500px] flex items-center justify-start p-8 md:p-16 overflow-hidden">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="A wide, cinematic landscape format fashion campaign image. A group of models stand in an arid, beautifully textured natural environment with soft, golden hour lighting. The styling is neutral, monochromatic, and highly sophisticated, reflecting an expensive, minimalist editorial aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0PrbV3PFuwmgZO1nX8KaeNLqpJJzM_14_iyJ_-nctyhAdYGxBMgpYylsu5qqESKJAlfbhrqTrP54KvvKphpn-v3rkdE85bLZG6YVaA9lU9J_awzz7TCl6YXX0uyb0YPQONh2OUXXZDbbNufhTwpGhV6s15uBrd7TtyGhuDVFeeKJDldzaJYg7MEA8aySoog-W-vzNQTlzoeDi11U8alRg7J75pN6WkCcAfmD8xR5yQGLh8M6kkdDLGg"/>
+<div class="absolute inset-0 bg-surface/20"></div>
+<div class="relative z-10 max-w-xl bg-surface/90 backdrop-blur-sm p-10 border border-on-surface/10">
+<p class="font-label-sm text-label-sm uppercase mb-4 tracking-widest text-on-surface-variant">Campaign</p>
+<h2 class="font-headline-lg text-headline-lg mb-4">New Season, New Vibes</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">Discover a collection born from the contrast between architectural structure and natural fluidity. Explore the essential pieces defining this season.</p>
+<a class="bg-primary-container text-on-primary uppercase font-label-sm text-label-sm px-8 py-4 inline-block hover:bg-on-surface-variant transition-colors" href="#">Explore Collection</a>
+</div>
+</div>
+</section>
+<!-- 4. TRUST BAR -->
+<section class="border-y border-on-surface/10 bg-surface-container-low py-8 mb-section-gap">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-2 md:grid-cols-4 gap-8">
+<div class="flex flex-col items-center text-center gap-3">
+<span class="material-symbols-outlined text-secondary" data-icon="local_shipping" style="font-size: 28px;">local_shipping</span>
+<span class="font-label-sm text-label-sm uppercase text-on-surface">Fast Delivery</span>
+</div>
+<div class="flex flex-col items-center text-center gap-3">
+<span class="material-symbols-outlined text-secondary" data-icon="replay" style="font-size: 28px;">replay</span>
+<span class="font-label-sm text-label-sm uppercase text-on-surface">Easy Returns</span>
+</div>
+<div class="flex flex-col items-center text-center gap-3">
+<span class="material-symbols-outlined text-secondary" data-icon="verified" style="font-size: 28px;">verified</span>
+<span class="font-label-sm text-label-sm uppercase text-on-surface">Quality Assured</span>
+</div>
+<div class="flex flex-col items-center text-center gap-3">
+<span class="material-symbols-outlined text-secondary" data-icon="lock" style="font-size: 28px;">lock</span>
+<span class="font-label-sm text-label-sm uppercase text-on-surface">Secure Payment</span>
+</div>
+</div>
+</section>
+<!-- 5. BEST OF SNITCH -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pb-section-gap">
+<div class="flex justify-between items-end mb-10 border-b border-on-surface/10 pb-4">
+<h2 class="font-headline-lg text-headline-lg">Best of Snitch</h2>
+<a class="font-label-sm text-label-sm uppercase hover:text-secondary transition-colors" href="#">View All →</a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Product Card 1 -->
+<div class="group relative">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container-high mb-4 relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Minimalist product photography of a structured charcoal wool blazer laid flat against a clean, off-white background. High contrast, sharp lighting, editorial quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0BM-oGqJK94cJIJelPEGpUkAgFPwBQPs2WisVTc6ibwd1ZJ9UfkuixgTsAvpHFdnPvqBNLjBZDCYRolgMxTMh57OqJ_Ej4a2SLr3TQx0xmV_GjcbYUPFRfvr7Jvjc0iDvucIDGdryyb3HB6pI-mmrO3z5ruVY_H12k0nW9iWcDhvklkBQ_LYJ-W-ULPWO_CYjNCeI_GUwkoxSO9-dmlEp5Lo1XOoOQX7eLy3rdlxhKi9DdYPt26Am4g"/>
+<button class="absolute top-4 right-4 text-on-surface/50 hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</button>
+</div>
+<h4 class="font-headline-md text-headline-md text-lg mb-1">Structured Wool Blazer</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">$450</p>
+</div>
+<!-- Product Card 2 -->
+<div class="group relative">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container-high mb-4 relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Minimalist product photography of a pristine white poplin button-down shirt laid flat against a clean, off-white background. High contrast, sharp lighting, showing texture, editorial quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5oYkuAlDWFFk1PEOcmaf1TchfbSscBL0YTA-0zhdV7Rp3cDhy30edj4KJZwDezEtZPhHjahAJ0Q-pjX98tAezblmuuK41xP9-EvVp09gvZ8aNGMe9oYDelXMuC0MOuo7axWWR34OeYBQidxty4VMrVRH2Lsz7M-bw9x0pf7CdaKM2tYGLpoEvjw2asBbKErS-gEKSFwgxa3dUAiAISKTjPgdnBlJ87DwH8SmaHy7awtv9eRgUPscBfw"/>
+<button class="absolute top-4 right-4 text-on-surface/50 hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</button>
+</div>
+<h4 class="font-headline-md text-headline-md text-lg mb-1">Poplin Oxford Shirt</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">$185</p>
+</div>
+<!-- Product Card 3 -->
+<div class="group relative">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container-high mb-4 relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Minimalist product photography of a pair of wide-leg tailored trousers in deep navy, laid flat against a clean, off-white background. High contrast, sharp lighting, editorial quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAv-k6fkT1vaUB3sQlGPXkuyenJxuqaCrVRhlyWZ-Bi_6gRiAMwkpq_y6_PTUp2Rm_dtsGq6UsV90pJjFZ2CaU1zO8Huc2ySrFlTlvkmvB9o-FH_2rnde1J0pmmwpMrxU2mvKpfwhNhEVTrO-1mhK4VIEmg-VmDkMRJA-9R_GSvggeZOu36lsPtn6TSkImeN93_O75ztSeKskDnlQhYilLBH7E-OqHXyn9VWG9oE3C2p26JULAGFu7zKg"/>
+<button class="absolute top-4 right-4 text-on-surface/50 hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</button>
+</div>
+<h4 class="font-headline-md text-headline-md text-lg mb-1">Wide-Leg Trouser</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">$220</p>
+</div>
+<!-- Product Card 4 -->
+<div class="group relative">
+<div class="aspect-[3/4] overflow-hidden bg-surface-container-high mb-4 relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Minimalist product photography of a sleek, black leather tote bag presented as an object of art on a subtle pedestal against a clean, off-white background. Sharp lighting, luxurious texture, editorial quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZBBws8Ku73ZqiBXNyK9om263IepT8bPP5g3hJ2cKX7czgy5UaIeTBlAu5gK4EJnRnQY9PNWYYPDOs5G4lbHMAEkUTlptuqVcstXRgEUzXUVj0aLuS07pZwNjhJM0rOewfIqZaA0td1DtoUNowv70rM0hpcv_9nb_0Sm8E0Wp4-YnXhUxO2TMFapBXDrOYh4SFSv49YgmUOTX0oj4pO-AVsu90835W33G3GuqMLBDiKrfRhhWVjCkQPQ"/>
+<button class="absolute top-4 right-4 text-on-surface/50 hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</button>
+</div>
+<h4 class="font-headline-md text-headline-md text-lg mb-1">Minimalist Leather Tote</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">$650</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer JSON Component -->
+<footer class="w-full bg-surface dark:bg-surface-container-low border-t border-on-surface/10 dark:border-on-surface-variant/10">
+<div class="flex flex-col items-center gap-10 py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<h2 class="font-display-lg text-display-lg-mobile tracking-tighter text-primary dark:text-on-surface">SNITCH.</h2>
+<nav class="flex flex-wrap justify-center gap-6 md:gap-12">
+<a class="text-on-surface-variant dark:text-on-tertiary-container font-label-sm text-label-sm hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="#">JOURNAL</a>
+<a class="text-on-surface-variant dark:text-on-tertiary-container font-label-sm text-label-sm hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="#">COLLECTIONS</a>
+<a class="text-on-surface-variant dark:text-on-tertiary-container font-label-sm text-label-sm hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="#">SHIPPING</a>
+<a class="text-on-surface-variant dark:text-on-tertiary-container font-label-sm text-label-sm hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="#">RETURNS</a>
+<a class="text-on-surface-variant dark:text-on-tertiary-container font-label-sm text-label-sm hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="#">ABOUT</a>
+<a class="text-on-surface-variant dark:text-on-tertiary-container font-label-sm text-label-sm hover:text-secondary dark:hover:text-secondary-fixed transition-colors duration-200" href="#">CONTACT</a>
+</nav>
+<p class="font-body-md text-body-md text-primary dark:text-on-surface opacity-100 hover:opacity-80 transition-opacity">© 2024 SNITCH. ALL RIGHTS RESERVED.</p>
+</div>
+</footer>
+</body></html>
