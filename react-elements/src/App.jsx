@@ -1,13 +1,16 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function App() {
 
     const [count, setCount] = useState(0)
+    
+
+  
     return (
         <div className="m-10 p-5 flex items-center gap-4 text-xl ">
 
-            <div><button onClick={ () => setCount  ((count) => Math.min(3, count + 1))} 
+            <div><button onClick={ () => setCount  ((count) => Math.min(100, count + 1))} 
             className="px-4 py-2 bg-zinc-800 text-white rounded">
                 +
              </button>
@@ -20,7 +23,13 @@ function App() {
                   </button>
                   </div>
 
-        </div>
+                   <div><button onClick={ () => setCount  ((count) => 0 )}
+             className="px-4 py-2 bg-zinc-800 text-white rounded">
+                 Reset
+                  </button>
+                  </div>
+            
+       </div>
     );
 }
 
