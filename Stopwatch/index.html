@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en" style="height: 100%;">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="app.js" defer></script>
+  </head>
+<body style="background-color: gray; margin: 0; padding: 0; height: 100%; display: flex; justify-content: center; align-items: center;">
+     <div
+      style="
+        border: 3px solid black;
+        padding: 30px 20px;
+        border-radius: 15px;
+        background-color: #383636;
+        text-align: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+       
+      " >
+      <h1 style="color: rgb(223, 45, 45); font-size: 50px; text-align: center; margin: 0">
+        StopWatch
+      </h1>
+
+      <h1 id="time" style="color: rgb(241, 234, 234); font-size: 80px; text-align: center; font-family: monospace;">
+        00 : 00 : 00
+      </h1>
+
+      <div
+        style="
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 15px;
+          margin: 0;
+        "
+      >
+        <button class="start" style="font-weight: semi-bold; font-size: 20px; background-color: green; color: white;">Start</button>
+        <button class="stop" style="font-weight: semi-bold; font-size: 20px; background-color: red; color: white;">Stop</button>
+        <button class="reset" style="font-weight: semi-bold; font-size: 20px; background-color: blue; color: white;">Reset</button>
+      </div>
+    </div>
+  </body>
+</html>
