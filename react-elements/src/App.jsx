@@ -1,6 +1,7 @@
 import Counter from './components/counter.jsx';
 import Textbox from './components/textbox.jsx';
 import Stopwatch from './components/Stopwatch.jsx';
+import ToggleButton  from './toggleButton.jsx';
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <Counter />
       <Textbox />
       <Stopwatch />
+      <ToggleButton />
     </>
   );
 }

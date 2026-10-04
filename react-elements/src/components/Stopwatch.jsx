@@ -1,84 +1,59 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 
-const Stopwatch = () => {
-  // ---- LAYER 1: STATE (jo UI pe dikhta hai) ----
-  const [hr, setHr]   = useState(0);
-  const [min, setMin] = useState(0);
-  const [sec, setSec] = useState(0);
+export default function Stopwatch() {
+  const [elapsed, setElapsed] = useState(0);   // total ms
   const [running, setRunning] = useState(false);
 
-  // ---- LAYER 2: REF (jo yaad rakhna hai, UI se related nahi) ----
-  const intervalRef = useRef(null);
+  const startTimeRef = useRef(0);   // jab start hua (Date.now() - elapsed)
+  const intervalRef  = useRef(null); // setInterval ki id
 
-  // ---- LAYER 2.5: EFFECT (side effect = setInterval) ----
+  // Timer chalu/band karne ka effect
   useEffect(() => {
     if (!running) return;
-setSec(prev => {
-        if (prev + 1 === 60) {
-          setMin(m => {
-            if (m + 1 === 60) {
-              setHr(h => h + 1);
-              return 0;
-            }
-            return m + 1;
-          });
-          return 0;
-        }
-        return prev + 1;
-      });
-    intervalRef.current = setInterval(() => {
-      setSec(prev => {
-        if (prev + 1 === 60) {
-          setMin(m => {
-            if (m + 1 === 60) {
-              setHr(h => h + 1);
-              return 0;
-            }
-            return m + 1;
-          });
-          return 0;
-        }
-        return prev + 1;
-      });
-    }, 1000);
 
-    return () => clearInterval(intervalRef.current);  // cleanup
+    startTimeRef.current = Date.now() - elapsed;
+
+    intervalRef.current = setInterval(() => {
+      setElapsed(Date.now() - startTimeRef.current);
+    }, 10);
+
+    return () => clearInterval(intervalRef.current);   // cleanup
   }, [running]);
 
-  // ---- LAYER 3: HANDLERS (sirf state badlo) ----
-  const handleStart = () => setRunning(true);
-  const handleStop  = () => setRunning(false);
-  const handleReset = () => {
-    setRunning(false);
-    setHr(0);
-    setMin(0);
-    setSec(0);
+  // Format logic (same as before)
+  const formatTime = (elapsed) => {
+    const s = Math.floor(elapsed / 1000) % 60;
+    const m = Math.floor(elapsed / 60000) % 60;
+    const h = Math.floor(elapsed / 3600000);
+
+    return (
+      String(h).padStart(2, "0") + ":" +
+      String(m).padStart(2, "0") + ":" +
+      String(s).padStart(2, "0")
+    );
   };
 
-  // ---- LAYER 4: DERIVED VALUE (state nahi) ----
-  const display =
-    `${String(hr).padStart(2, "0")} : ` +
-    `${String(min).padStart(2, "0")} : ` +
-    `${String(sec).padStart(2, "0")}`;
+  const handleStart = () => setRunning(true);
+  const handleStop  = () => setRunning(false);
+
+  const handleReset = () => {
+    setRunning(false);
+    setElapsed(0);
+  };
 
   return (
-    <div>
-      <h1 className="text-3xl font-bold text-center text-white bg-gray-800 p-4 rounded-lg shadow-lg">
-        {display}
-      </h1>
-      <div className="flex justify-center gap-4 mt-4">
-        <button onClick={handleStart} disabled={running} className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition-colors">
-          Start
-        </button>
-        <button onClick={handleStop}  disabled={!running} className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition-colors">
-          Stop
-        </button>
-        <button onClick={handleReset} className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors">
-          Reset
-        </button>
-      </div>
+    <div style={{ textAlign: "center", fontFamily: "monospace" }}>
+      <h1 style={{ fontSize: "48px" }}>{formatTime(elapsed)}</h1>
+
+      <button onClick={handleStart} disabled={running} className="btn btn-primary ">
+        Start
+      </button>
+      <button onClick={handleStop} disabled={!running} className="btn btn-danger">
+        Stop
+      </button>
+      <button onClick={handleReset} className="btn btn-secondary">
+        Reset
+      </button>
     </div>
   );
-};
-
-export default Stopwatch;
+}
