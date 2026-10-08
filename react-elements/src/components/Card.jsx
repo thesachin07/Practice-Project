@@ -1,6 +1,6 @@
-import React from 'react'
+import React, {useState} from 'react';
 
-const Card = ({ title, text, like, post, view }) => {
+const Card = ({ title, text, like, post, view, count, handleIncrement }) => {
   return (
     <div className="bg-white p-6 rounded-3xl shadow-xl w-80 text-center border border-gray-100 font-sans">
       
@@ -11,15 +11,22 @@ const Card = ({ title, text, like, post, view }) => {
           Yeh Joh yellow clr mai highlight hai wo props se aa rha hai 
         </p>
         
+        
 
         {/* Profile Avatar */}
-        <div className="absolute -bottom-8 left-1/2 -translate-x-1/2">
+        <div className="flex absolute -bottom-8 left-1/2 -translate-x-1/2">
           <div className="w-16 h-16 rounded-full border-2 border-white overflow-hidden shadow-md bg-amber-100">
             <img
               src="https://api.dicebear.com/7.x/bottts/svg?seed=Noah" 
               alt="Avatar"
               className="w-full h-full object-cover"
             />
+          </div>
+          <div className="ml-4">
+            <p className="text-lg font-bold text-gray-800">{count}</p>
+            <button onClick={handleIncrement} className="p-2 bg-white text-gray-800 hover:bg-gray-200">
+              Increment
+            </button>
           </div>
         </div>
       </div>
