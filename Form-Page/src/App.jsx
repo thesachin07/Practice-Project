@@ -9,13 +9,16 @@ const App = () => {
   const [imageURL, setImageURL] = useState('')
   const [userDesc, setUserDesc] = useState('')
 
-  const [allUsers, setAllUsers] = useState([])
+   let local = JSON.parse(localStorage.getItem('allUsers'))  || [];
+  const [allUsers, setAllUsers] = useState(local)
+
 
   const submitHandler = (e) => {
     e.preventDefault()
 
-    setAllUsers([...allUsers, { userName, userRole, userDesc, imageURL }])
-
+    const updatedUser = [...allUsers, { userName, userRole, userDesc, imageURL }]
+    setAllUsers(updatedUser)
+    localStorage.setItem('allUsers', JSON.stringify(updatedUser))
     setUserName('')
     setUserRole('')
     setUserDesc('')
@@ -28,6 +31,7 @@ const App = () => {
     copyUsers.splice(idx, 1)
 
     setAllUsers(copyUsers)
+    localStorage.setItem('allUsers', JSON.stringify(copyUsers))
   }
 
 
@@ -80,9 +84,11 @@ const App = () => {
       </form>
       <div className='px-4 py-10 gap-4 flex flex-wrap'>
 
-        {allUsers.map(function (elem, idx) {
-          return <Card idx={idx} elem={elem} deleteHandler={deleteHandler} />
-        })}
+  
+        {allUsers.map((elem, idx) => {
+  return <Card key={idx} elem={elem} deleteHandler={deleteHandler} />
+})}
+
 
       </div>
     </div>
