@@ -10,8 +10,9 @@ const App = () => {
     console.log(result)
   }
 
+  const clr = Math.floor(Math.random()*256)
   return (
-    <div className='m-5 p-3'>
+    <div style={{backgroundColor:clr}} className='m-5 p-3'>
       <div>
         <button onClick={handleClick} className='bg-green-600 p-3 border rounded text-xl font-lg'>
           Click me
