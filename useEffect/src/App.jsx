@@ -1,11 +1,11 @@
 import React from 'react'
-// import Counter from './Component/counter'
+import Counter from './Component/counter'
 import ApiDataFetching from './Component/ApiDataFetching'
 
 const App = () => {
   return (
     <div>
-      {/* <Counter/> */}
+      <Counter/>
       <ApiDataFetching/>
     </div>
   )

@@ -6,10 +6,14 @@ const [user, setUser] = useState([])
 
     useEffect(() => {
         const dataFetch = async () => {
+          try{
            const result =  await Axios.get('https://jsonplaceholder.typicode.com/users')
            setUser(result.data)
            console.log(result.data)
+        } catch(error){
+          console.log('data fetch failed:', error)
         }
+      }
         dataFetch()
     }, [])
 
