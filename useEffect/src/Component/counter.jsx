@@ -9,6 +9,7 @@ setCount( count + 1)
 
   useEffect ( () => {
     console.log("hi everyone")
+    console.log("how are you?")
   })
   return (
 
