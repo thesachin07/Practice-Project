@@ -1,9 +1,10 @@
 import React from 'react'
+import Toast from './Toast'
 
 const App = () => {
   return (
     <div>
-      hi
+      <Toast />
     </div>
   )
 }
